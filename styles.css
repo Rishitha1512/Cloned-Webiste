@@ -7,11 +7,197 @@
     font-family: 'Roboto', sans-serif;
     color: white;
 }
-.top{
+/* .top{
     background: rgba(0,0,0,0.2)url("assets/Title-Image.png");
     background-blend-mode: darken;
       
+} */
+/* Main section for the top background */
+.top {
+    background: rgba(0, 0, 0, 0.2) url("assets/Title-Image.png");
+    background-blend-mode: darken;
+    background-size: cover; /* Ensures the background covers the full section */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px; /* Add some padding for spacing */
 }
+
+/* Navigation Bar Styles */
+nav {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Navigation Menu (List) */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adjust for smaller screens */
+.nav-bar {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+     /* Adjust logo size for responsiveness */
+    margin: 20px; /* Margin for spacing */
+}
+
+/* Navigation items */
+nav ul li {
+    margin: 10px;
+}
+
+/* Menu (Search, Gift, Notification, Profile) */
+.menu {
+    margin: 18px;
+}
+
+.menu li {
+    margin: 15px;
+}
+
+/* Title Section */
+.title {
+    margin-left: 20px;
+    margin-top: 100px; /* Adjust top margin */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.title .name {
+    font-size: 80px; /* Adjust the font size for responsiveness */
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.show {
+    display: flex;
+    align-items: center;
+}
+
+.show img {
+    margin-right: 10px;
+}
+
+.show p {
+    margin: 10px;
+    letter-spacing: 5px;
+}
+
+.name-buttons {
+    display: flex;
+}
+
+/* Play and Info Buttons */
+.play-btn, .info-btn {
+    margin: 10px;
+    display: flex;
+    padding: 4px 13px;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+/* Responsive Title Section */
+@media screen and (max-width: 1024px) {
+    .title .name {
+        font-size: 60px; /* Smaller font size on tablets */
+    }
+
+    .logo {
+        width: 100px; /* Resize logo on tablets */
+    }
+
+    .title {
+        margin-left: 20px;
+        margin-top: 80px; /* Adjust margin */
+    }
+
+    .show p {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+
+    .play-btn, .info-btn {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .title .name {
+        font-size: 40px;
+        border: 1px solid white; /* Font size for mobile devices */
+    }
+
+    .logo {
+        width: 80px; /* Smaller logo for mobile */
+    }
+
+    .title {
+        margin-left: 10px;
+        margin-top: 50px; /* Adjust margins for mobile screens */
+    }
+
+    .name-buttons {
+        flex-direction: column; /* Stack buttons on mobile */
+        align-items: flex-start;
+    }
+
+    .play-btn, .info-btn {
+        font-size: 12px;
+        padding: 6px 15px; /* Adjust padding for smaller screens */
+    }
+
+    .show img {
+        width: 50px; /* Resize image for mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title .name {
+        font-size: 30px; /* Font size for very small mobile screens */
+    }
+
+    .logo {
+        width: 70px; /* Even smaller logo for very small screens */
+    }
+
+    .title {
+        margin-left: 10px;
+        margin-top: 30px; /* Adjust top margin further */
+    }
+
+    .name-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: flex-start;
+    }
+
+    .play-btn, .info-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .show img {
+        width: 40px; /* Adjust the size of the image */
+    }
+}
+
+/* Optional: You can add other styles for very small screens */
+
 section{
     height: "337px";
     width: "599px";
@@ -178,4 +364,45 @@ footer{
     margin-top: 25px;
     margin-left: 46px;
     align-items: center;
+}
+
+.middle {
+    background-color: rgb(20, 20, 20); /* Black background for the movie section */
+    padding: 20px; /* Add some padding for spacing around content */
+}
+
+/* Flexbox or Grid layout for the movie images container */
+.middle .images {
+    display: grid;  /* Use grid layout for responsiveness */
+    grid-template-columns: repeat(5, 1fr);  /* By default, 5 items per row (desktop view) */
+    gap: 20px;  /* Spacing between images */
+    margin-top: 20px; /* Add some space at the top */
+}
+
+/* For tablets and smaller screens (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .middle .images {
+        grid-template-columns: repeat(3, 1fr);  /* 3 items per row for tablets */
+    }
+}
+
+/* For mobile screens (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .middle .images {
+        grid-template-columns: repeat(2, 1fr);  /* 2 items per row for mobile devices */
+    }
+}
+
+/* For very small mobile screens (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .middle .images {
+        grid-template-columns: 1fr;  /* 1 item per row for very small screens */
+    }
+}
+
+/* Ensure the images scale properly within the grid */
+.middle .images img {
+    width: 100%;  /* Ensure images take full width of their grid cell */
+    height: auto;  /* Maintain aspect ratio */
+    border-radius: 10px;  /* Optional: Add border radius for rounded corners */
 }
