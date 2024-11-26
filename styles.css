@@ -7,6 +7,12 @@
     font-family: 'Roboto', sans-serif;
     color: white;
 }
+html,
+body {
+  width: 100%;
+  min-width: 100%;
+  overflow-x: hidden;
+}
 /* .top{
     background: rgba(0,0,0,0.2)url("assets/Title-Image.png");
     background-blend-mode: darken;
